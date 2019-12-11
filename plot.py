@@ -65,8 +65,8 @@ def plot_latentspace(z_points, example_labels, decoder):
 
     # x = norm.ppf(np.linspace(0.05, 0.95, 10))
     # y = norm.ppf(np.linspace(0.05, 0.95, 10))
-    x = np.linspace(min(z_points[:, 0]), max(z_points[:, 0]), 6)
-    y = np.linspace(max(z_points[:, 1]), min(z_points[:, 1]), 6)
+    x = np.linspace(min(z_points[:, 0]), max(z_points[:, 0]), 10)
+    y = np.linspace(max(z_points[:, 1]), min(z_points[:, 1]), 10)
     xv, yv = np.meshgrid(x, y)
     xv = xv.flatten()
     yv = yv.flatten()
@@ -78,8 +78,8 @@ def plot_latentspace(z_points, example_labels, decoder):
     plt.show()
     fig = plt.figure(figsize=(6, 6))
     fig.subplots_adjust(hspace=0.4, wspace=0.4)
-    for i in range(6**2):
-        ax = fig.add_subplot(6, 6, i+1)
+    for i in range(10**2):
+        ax = fig.add_subplot(10, 10, i+1)
         ax.axis('off')
         ax.imshow(reconst[i, :,:,0], cmap = 'Greys')
         
